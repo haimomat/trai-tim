@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | fetch() Method</title>
+</head>
+<body>
+    <a id="myCountry"></a>
+    <script>
+        // API for get requests
+        let fetchRes = fetch(
+            "http://ip-api.com/json/");
+        // fetchRes is the promise to resolve
+        // it by using.then() method
+        fetchRes.then(res =>
+            res.json()).then(d => {
+                const element = document.getElementById("myCountry");
+                element.innerHTML = "<th>"+d.country+"</th>";
+            })
+    </script>
+</body>
+</html>
